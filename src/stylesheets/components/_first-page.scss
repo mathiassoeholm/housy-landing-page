@@ -1,5 +1,10 @@
 .first-page {
   height: 100vh;
-  background-image: url("http://i.imgur.com/U98TkRy.jpg");
-  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.first-page-top-row {
+  display: flex;
+  padding-top: 3em;
 }
