@@ -8,10 +8,8 @@ const Dropdown: React.FC = () => {
     <div className={'select-wrapper'}>
       <FontAwesomeIcon icon={faChevronDown} className={'select-arrow'} size={'xs'}/>
       <select>
-        <option value="volvo">I am a Tenant</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
+        <option value="tenant">I am a Tenant</option>
+        <option value="landlord">I am a Landlord</option>
       </select>
     </div>
   )

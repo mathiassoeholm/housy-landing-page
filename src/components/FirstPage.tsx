@@ -7,7 +7,10 @@ const FirstPage: React.FC = () => {
     <div className={'first-page'}>
       <div className={'first-page-top-row'}>
         <Logo />
-        <Dropdown />
+        <div style={{ display: 'flex' }}>
+          <Dropdown />
+          <Dropdown />
+        </div>
       </div>
     </div>
   );
