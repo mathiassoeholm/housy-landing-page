@@ -27,7 +27,11 @@ const FirstPage: React.FC<Props> = (props: Props) => {
         </div>
       </div>
       <div className={'first-page-center'}>
-
+        <h1>Effortless to the perfect tenant</h1>
+        <h3>Find suitable tenants directly and without mass visitation.</h3>
+        <button className={'find-tenants-button'} >
+          Find Tenants Now
+        </button>
       </div>
       <div className={'first-page-bottom'}>
 

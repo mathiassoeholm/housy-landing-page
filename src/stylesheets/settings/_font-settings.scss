@@ -2,3 +2,16 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
+
+h1 {
+  margin: 0.4em 0;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  margin: 0.4em 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $faded-color;
+}

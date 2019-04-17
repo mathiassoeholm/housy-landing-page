@@ -4,11 +4,25 @@
   align-content: center;
   border-radius: 6px;
   padding: 0.9em 2.8em;
+
+  &:focus { outline: none; }
 }
 
 .login-button {
   @extend %button;
-  border: 1px solid #AAA;
+  border: 1px solid $faded-color;
   margin: 0 2em;
   background: white;
+  font-weight: 500;
+}
+
+.find-tenants-button {
+  @extend %button;
+  background: $accent-color;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 2em;
+  box-shadow: 0 11px 7px rgba($accent-color, .3);
 }
