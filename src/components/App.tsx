@@ -2,12 +2,35 @@ import React, { Component } from 'react';
 import FirstPage from './FirstPage'
 import SecondPage from './SecondPage'
 
-class App extends Component {
+interface State {
+  scrollOffset: number
+}
+
+class App extends Component<{}, State> {
+
+  state: State = {
+    scrollOffset: 0,
+  }
+
+  componentDidMount(): void {
+    window.addEventListener('scroll',  this.handleScroll)
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    this.setState({
+      scrollOffset: window.pageYOffset
+    })
+  }
+
   render() {
     return (
       <>
-        <FirstPage />
-        <SecondPage />
+        <FirstPage scrollOffset={this.state.scrollOffset} />
+        <SecondPage scrollOffset={this.state.scrollOffset}/>
       </>
     );
   }

@@ -19,5 +19,15 @@
 
 .first-page-bottom {
   height: 6em;
-  background: rgb(57, 145, 253);
+  background: $accent-color;
+}
+
+.first-page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $accent-color;
+  pointer-events: none;
 }

@@ -1,35 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-interface State {
-  offset: number
+interface Props {
+  scrollOffset: number
 }
 
-class SecondPage extends Component<{}, State> {
-  state: State = {
-    offset: 0,
-  }
+const SecondPage: React.FC<Props> = (props: Props) => {
+  return (
+    <div className={'second-page'} style={{ top: `calc(100vh - ${0.25*props.scrollOffset}px`  }}>
 
-  componentDidMount(): void {
-    window.addEventListener('scroll',  this.handleScroll)
-  }
-
-  componentWillUnmount(): void {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    this.setState({
-      offset: window.pageYOffset
-    })
-  }
-
-  render() {
-    return (
-      <div className={'second-page'} style={{ top: `calc(100vh - ${0.25*this.state.offset}px`  }}>
-
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default SecondPage

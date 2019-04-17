@@ -2,7 +2,11 @@ import React from 'react'
 import Logo from './Logo'
 import Dropdown from './Dropdown'
 
-const FirstPage: React.FC = () => {
+interface Props {
+  scrollOffset: number
+}
+
+const FirstPage: React.FC<Props> = (props: Props) => {
   return (
     <div className={'first-page'}>
       <div className={'first-page-top'}>
@@ -28,6 +32,7 @@ const FirstPage: React.FC = () => {
       <div className={'first-page-bottom'}>
 
       </div>
+      <div className={'first-page-overlay'} style={{ opacity: props.scrollOffset/window.innerHeight }}/>
     </div>
   );
 }
