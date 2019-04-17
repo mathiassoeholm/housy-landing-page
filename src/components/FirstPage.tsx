@@ -5,7 +5,7 @@ import Dropdown from './Dropdown'
 const FirstPage: React.FC = () => {
   return (
     <div className={'first-page'}>
-      <div className={'first-page-top-row'}>
+      <div className={'first-page-top'}>
         <Logo />
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Dropdown data={new Map([
@@ -21,6 +21,12 @@ const FirstPage: React.FC = () => {
             ['danish', 'Danish'],
           ])}/>
         </div>
+      </div>
+      <div className={'first-page-center'}>
+
+      </div>
+      <div className={'first-page-bottom'}>
+
       </div>
     </div>
   );

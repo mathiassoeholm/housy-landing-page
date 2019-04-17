@@ -25,7 +25,7 @@ class SecondPage extends Component<{}, State> {
 
   render() {
     return (
-      <div className={'second-page'} style={{ top: `calc(100vh - ${this.state.offset}px`  }}>
+      <div className={'second-page'} style={{ top: `calc(100vh - ${0.25*this.state.offset}px`  }}>
 
       </div>
     )

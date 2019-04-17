@@ -4,8 +4,20 @@
   flex-direction: column;
 }
 
-.first-page-top-row {
+.first-page-top {
   display: flex;
   justify-content: space-around;
   padding-top: 3em;
+}
+
+.first-page-center {
+  flex: 1;
+  background-image: url('../assets/skyline.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.first-page-bottom {
+  height: 6em;
+  background: rgb(57, 145, 253);
 }
