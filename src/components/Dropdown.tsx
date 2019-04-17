@@ -3,13 +3,20 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-const Dropdown: React.FC = () => {
+interface Props {
+  data: Map<string, string>
+}
+
+const Dropdown: React.FC<Props> = (props: Props) => {
   return (
     <div className={'select-wrapper'}>
       <FontAwesomeIcon icon={faChevronDown} className={'select-arrow'} size={'xs'}/>
       <select>
-        <option value="tenant">I am a Tenant</option>
-        <option value="landlord">I am a Landlord</option>
+        {
+          Array.from(props.data, ([key, value]) =>
+            <option value={key}>{value}</option>
+          )
+        }
       </select>
     </div>
   )
