@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import TopPage from './components/TopPage'
+import FirstPage from './FirstPage'
+import SecondPage from './SecondPage'
 
 class App extends Component {
   render() {
     return (
       <>
-        <TopPage />
+        <FirstPage />
+        <SecondPage />
       </>
     );
   }
