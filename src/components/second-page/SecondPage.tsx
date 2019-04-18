@@ -14,52 +14,48 @@ const SecondPage: React.FC<Props> = (props: Props) => {
 
   const onMainBoxChangeVisibility = (isVisible: boolean) => {
     if (isVisible && !didStartAnimation) {
+
+      let animation = {
+        start: 0,
+        end: 0,
+      }
+
       anime({
-        targets: {},
-        easing: 'easeInExpo',
-        duration: 1000,
-        update: function(anim: anime.AnimeInstance) {
-          setEnd(anim.progress/100)
+        targets: animation,
+        end: 1,
+        easing: 'easeOutSine',
+        duration: 1400,
+        update: function() {
+          setEnd(animation.end)
         }
       });
 
       setTimeout(() => {
         anime({
-          targets: {},
-          easing: 'easeOutExpo',
-          duration: 1000,
-          update: function(anim: anime.AnimeInstance) {
-            setStart(anim.progress/100)
+          targets: animation,
+          start: 1,
+          easing: 'easeOutSine',
+          duration: 1400,
+          update: function() {
+            setStart(animation.start)
           }
         });
       }, 200)
-
-
 
       setDidStartAnimation(true);
     }
   }
 
   const getLine = (start: number, end: number) => {
-
     const aspect = 70/25;
     const short = (1/aspect)/2;
     const long = (1-short*2)/2
 
-    const p1 = 0;
     const p2 = long;
     const p3 = long+short;
     const p4 = long+short+long;
     const p5 = long+short+long+short;
-/*
-    console.log('p1 ' + p1)
-    console.log('p2 ' + p2)
-    console.log('p3 ' + p3)
-    console.log('p4 ' + p4)
-    console.log('p5 ' + p5)
-    console.log('start ' + start)
-    console.log('end ' + end)
-*/
+
     const p1_x = 100 - (start/long)*100;
     const p1_y = 0;
     const drawP1 = start < p2;
@@ -108,15 +104,9 @@ const SecondPage: React.FC<Props> = (props: Props) => {
     const p5_string = drawP5
       ? `${p5_x} ${p5_y},`
       : '';
-/*
-    console.log('p1_string ' + p1_string)
-    console.log('p2_string ' + p2_string)
-    console.log('p3_string ' + p3_string)
-    console.log('p4_string ' + p4_string)
-    console.log('p5_string ' + p5_string)
-*/
-    const points = `${p1_string}${p2_string}${p3_string}${p4_string}${p5_string}`.slice(0, -1)
-    //console.log(points)
+
+    const points = `${p1_string}${p2_string}${p3_string}${p4_string}${p5_string}`
+      .slice(0, -1) // Remove trailing comma
 
     return  <polyline
       className="second-page-animated-line"
