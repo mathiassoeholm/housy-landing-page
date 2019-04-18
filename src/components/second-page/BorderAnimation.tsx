@@ -104,7 +104,7 @@ const BorderAnimation: React.FC = () => {
       .slice(0, -1) // Remove trailing comma
 
     return  <polyline
-      className="second-page-animated-line"
+      className="border-animation-path"
       points={points}
       fill="none"
       strokeWidth="4"
@@ -114,7 +114,14 @@ const BorderAnimation: React.FC = () => {
 
   return (
     <VisibilitySensor onChange={onChangeVisibility}>
-      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className={'border-animation'}
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         {
           getLine(start, end)
         }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import FindTenantsButton from '../FindTenantsButton'
 import BorderAnimation from './BorderAnimation'
+import MainBoxChild from './MainBoxChild'
 
 interface Props {
   scrollOffset: number
@@ -21,6 +22,9 @@ const SecondPage: React.FC<Props> = (props: Props) => {
       </div>
       <div className={'second-page-main-box'}>
         <BorderAnimation />
+        <MainBoxChild />
+        <MainBoxChild />
+        <MainBoxChild />
       </div>
       <FindTenantsButton />
       </div>

@@ -47,8 +47,16 @@
   width: 70em;
   border: 1px solid $more-faded-color;
   border-radius: 6px;
+  position: relative;
+  display: flex;
 }
 
-.second-page-animated-line {
-  stroke: $accent-color;
+.main-box-child {
+  flex: 1;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.main-box-child + .main-box-child {
+  border-left: 1px solid $more-faded-color;
 }
