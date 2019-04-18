@@ -4,6 +4,7 @@ import Dropdown from './Dropdown'
 import SellingPoint from './SellingPoint'
 import {faCreditCard} from '@fortawesome/free-regular-svg-icons'
 import {faCoins, faGift} from '@fortawesome/free-solid-svg-icons'
+import FindTenantsButton from '../FindTenantsButton'
 
 interface Props {
   scrollOffset: number
@@ -32,9 +33,7 @@ const FirstPage: React.FC<Props> = (props: Props) => {
       <div className={'first-page-center'}>
         <h1>Effortless to the perfect tenant</h1>
         <h3>Find suitable tenants directly and without mass visitation.</h3>
-        <button className={'find-tenants-button'} >
-          Find Tenants Now
-        </button>
+        <FindTenantsButton />
       </div>
       <div className={'first-page-bottom'}>
         <div className={'first-page-bottom-row'}>

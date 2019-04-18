@@ -5,4 +5,48 @@
   top: 100vh;
   background: white;
   @include box_shadow(5);
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+  }
+
+  p {
+    color: $faded-color;
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.8em;
+  }
 }
+
+.second-page-main-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  max-height: 800px;
+}
+
+.second-page-top-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.second-page-separator {
+  height: 1px;
+  width: 5em;
+  background: $faded-color;
+  margin-bottom: 1.8em;
+}
+
+.second-page-main-box {
+  height: 25em;
+  width: 70em;
+  border: 1px solid $more-faded-color;
+  border-radius: 6px;
+}
+
+
