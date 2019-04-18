@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import FindTenantsButton from '../FindTenantsButton'
 import BorderAnimation from './BorderAnimation'
 import MainBoxChild from './MainBoxChild'
+import archiveImage from '../../assets/archive.png'
+import tenantImage from '../../assets/tenant.png'
+import apartmentImage from '../../assets/apartment.png'
 
 interface Props {
   scrollOffset: number
@@ -22,9 +25,9 @@ const SecondPage: React.FC<Props> = (props: Props) => {
       </div>
       <div className={'second-page-main-box'}>
         <BorderAnimation />
-        <MainBoxChild />
-        <MainBoxChild />
-        <MainBoxChild />
+        <MainBoxChild image={archiveImage} />
+        <MainBoxChild image={tenantImage} />
+        <MainBoxChild image={apartmentImage} />
       </div>
       <FindTenantsButton />
       </div>
