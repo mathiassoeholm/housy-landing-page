@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FirstPage from './FirstPage'
-import SecondPage from './SecondPage'
+import FirstPage from './first-page/FirstPage'
+import SecondPage from './second-page/SecondPage'
 
 interface State {
   scrollOffset: number

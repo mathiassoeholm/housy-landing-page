@@ -28,8 +28,15 @@
 }
 
 .first-page-bottom {
-  height: 6em;
   background: $accent-color;
+}
+
+.first-page-bottom-row {
+  height: 6em;
+  display: flex;
+  justify-content: space-around;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .first-page-overlay {

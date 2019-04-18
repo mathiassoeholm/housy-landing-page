@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
-  data: Map<string, string>
+  data: Map<string, string>,
 }
 
 const Dropdown: React.FC<Props> = (props: Props) => {

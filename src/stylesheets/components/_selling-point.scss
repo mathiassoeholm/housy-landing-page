@@ -1,0 +1,23 @@
+.selling-point {
+  display: flex;
+  align-items: center;
+  color: white;
+
+}
+
+.selling-point-icon-wrapper {
+  position: relative;
+  margin-right: 2.6em;
+  overflow: visible;
+}
+
+.selling-point-icon {
+
+}
+
+.selling-point-icon-slash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

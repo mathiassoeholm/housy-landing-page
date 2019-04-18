@@ -1,6 +1,9 @@
 import React from 'react'
 import Logo from './Logo'
 import Dropdown from './Dropdown'
+import SellingPoint from './SellingPoint'
+import {faCreditCard} from '@fortawesome/free-regular-svg-icons'
+import {faCoins, faGift} from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   scrollOffset: number
@@ -34,7 +37,11 @@ const FirstPage: React.FC<Props> = (props: Props) => {
         </button>
       </div>
       <div className={'first-page-bottom'}>
-
+        <div className={'first-page-bottom-row'}>
+          <SellingPoint icon={faCreditCard} text={'No subscription'} showSlash />
+          <SellingPoint icon={faCoins} text={'No running advertisement costs'} showSlash />
+          <SellingPoint icon={faGift} text={'Free to successful rental'} />
+        </div>
       </div>
       <div className={'first-page-overlay'} style={{ opacity: props.scrollOffset/window.innerHeight }}/>
     </div>
