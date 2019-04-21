@@ -7,13 +7,9 @@ import {faCoins, faGift} from '@fortawesome/free-solid-svg-icons'
 import FindTenantsButton from '../FindTenantsButton'
 import Balloon from './Balloon'
 
-interface Props {
-  scrollOffset: number
-}
-
-const FirstPage: React.FC<Props> = (props: Props) => {
+const FirstPage: React.FC = () => {
   return (
-    <div className="page first-page">
+    <div className="first-page">
       <div className="first-page__top">
         <Logo />
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -49,7 +45,6 @@ const FirstPage: React.FC<Props> = (props: Props) => {
           <SellingPoint icon={faGift} text={'Free to successful rental'} />
         </div>
       </div>
-      <div className="first-page__overlay" style={{ opacity: props.scrollOffset/window.innerHeight }}/>
     </div>
   );
 }

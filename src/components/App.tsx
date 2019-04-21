@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import FirstPage from './first-page/FirstPage'
 import SecondPage from './second-page/SecondPage'
+import ThirdPage from './third-page/ThirdPage'
 
 interface State {
-  scrollOffset: number,
+  currentPage: number,
 }
 
 class App extends Component<{}, State> {
-  canScroll = true
-  currentPage = 1
+  timeOfLastScroll = 0
 
   state: State = {
-    scrollOffset: 0,
+    currentPage: 0,
   }
 
   componentDidMount(): void {
-    window.addEventListener('scroll',  this.handleScroll)
     window.addEventListener('wheel', this.handleWheel)
-
 
     const body = document.querySelector('body')
     if (body != null) {
@@ -26,47 +24,49 @@ class App extends Component<{}, State> {
   }
 
   componentWillUnmount(): void {
-    window.addEventListener('scroll',  this.handleScroll)
     window.removeEventListener('wheel', this.handleWheel)
   }
 
-  handleScroll = () => {
-    console.log(window.pageYOffset)
-    this.setState({
-      scrollOffset: window.pageYOffset
-    })
-  }
-
   handleWheel = (event: WheelEvent) => {
-    if (!this.canScroll) {
+    if (Date.now() - this.timeOfLastScroll < 200) {
+      this.timeOfLastScroll = Date.now()
       return
     }
 
-    this.canScroll = false
-
-    setTimeout(() => {
-      this.canScroll = true
-    }, 400)
-
-
+    this.timeOfLastScroll = Date.now()
 
     if (event.deltaY > 0) {
-      if (this.currentPage === 'first') {
-
-      }
+      this.setState({
+        currentPage: Math.min( this.pages.length - 1, this.state.currentPage + 1),
+      })
     } else {
-
+      this.setState({
+        currentPage: Math.max(0, this.state.currentPage - 1),
+      })
     }
   }
 
+  pages = [
+    <FirstPage />,
+    <SecondPage />,
+    <ThirdPage />,
+  ]
 
   render() {
-    return (
-      <>
-        <FirstPage scrollOffset={this.state.scrollOffset} />
-        <SecondPage scrollOffset={this.state.scrollOffset}/>
-      </>
-    );
+    return this.pages.map((page, index) => {
+      const className =
+        this.state.currentPage < index
+          ? 'page page--below'
+          : this.state.currentPage > index
+          ? 'page page--above'
+          : 'page'
+
+      return (
+        <div key={index} className={className}>
+          {page}
+        </div>
+      )
+    })
   }
 }
 

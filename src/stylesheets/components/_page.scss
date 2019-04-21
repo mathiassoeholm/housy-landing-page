@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 1s;
+  transition: 1s ease-in-out;
 
   &--above {
     transform: translateY(-50%);

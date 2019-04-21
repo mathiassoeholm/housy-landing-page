@@ -6,13 +6,9 @@ import archiveImage from '../../assets/archive.png'
 import tenantImage from '../../assets/tenant.png'
 import apartmentImage from '../../assets/apartment.png'
 
-interface Props {
-  scrollOffset: number
-}
-
-const SecondPage: React.FC<Props> = (props: Props) => {
+const SecondPage: React.FC = () => {
   return (
-    <div className={'page second-page'} >
+    <div className={'second-page'} >
       <div className={'second-page-main-row'}>
       <div className={'second-page-top-column'}>
         <h2>3 EASY STEPS</h2>
