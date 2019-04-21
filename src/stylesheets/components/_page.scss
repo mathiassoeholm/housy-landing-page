@@ -1,0 +1,16 @@
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 1s;
+
+  &--above {
+    transform: translateY(-50%);
+  }
+
+  &--below {
+    transform: translateY(100%);
+  }
+}

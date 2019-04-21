@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import FindTenantsButton from '../FindTenantsButton'
 import BorderAnimation from './BorderAnimation'
 import MainBoxChild from './MainBoxChild'
@@ -12,7 +12,7 @@ interface Props {
 
 const SecondPage: React.FC<Props> = (props: Props) => {
   return (
-    <div className={'second-page'} style={{ top: `calc(100vh - ${0.25*props.scrollOffset}px`  }}>
+    <div className={'page second-page'} >
       <div className={'second-page-main-row'}>
       <div className={'second-page-top-column'}>
         <h2>3 EASY STEPS</h2>

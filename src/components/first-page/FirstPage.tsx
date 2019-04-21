@@ -13,7 +13,7 @@ interface Props {
 
 const FirstPage: React.FC<Props> = (props: Props) => {
   return (
-    <div className="first-page">
+    <div className="page first-page">
       <div className="first-page__top">
         <Logo />
         <div style={{ display: 'flex', alignItems: 'center' }}>

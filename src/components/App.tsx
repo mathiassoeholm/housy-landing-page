@@ -3,11 +3,12 @@ import FirstPage from './first-page/FirstPage'
 import SecondPage from './second-page/SecondPage'
 
 interface State {
-  scrollOffset: number
+  scrollOffset: number,
 }
 
 class App extends Component<{}, State> {
   canScroll = true
+  currentPage = 1
 
   state: State = {
     scrollOffset: 0,
@@ -47,18 +48,14 @@ class App extends Component<{}, State> {
       this.canScroll = true
     }, 400)
 
+
+
     if (event.deltaY > 0) {
-      window.scroll({
-        top: window.innerHeight - this.state.scrollOffset*0.25,
-        left: 0,
-        behavior: 'smooth'
-      })
+      if (this.currentPage === 'first') {
+
+      }
     } else {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      })
+
     }
   }
 
