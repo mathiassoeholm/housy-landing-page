@@ -13,8 +13,8 @@ interface Props {
 
 const FirstPage: React.FC<Props> = (props: Props) => {
   return (
-    <div className={'first-page'}>
-      <div className={'first-page-top'}>
+    <div className="first-page">
+      <div className="first-page__top">
         <Logo />
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Dropdown data={new Map([
@@ -31,22 +31,25 @@ const FirstPage: React.FC<Props> = (props: Props) => {
           ])}/>
         </div>
       </div>
-      <div className={'first-page-center'}>
-        <div className={'first-page-center__background'}/>
+      <div className="first-page__center">
+        <div className="first-page__background"/>
         <Balloon />
-        <h1>Effortless to the perfect tenant</h1>
-        <h3>Find suitable tenants directly and without mass visitation.</h3>
+        <h1 className="first-page__title">
+          Effortless to the perfect tenant
+        </h1>
+        <h3 className="first-page__subtitle">
+          Find suitable tenants directly and without mass visitation.
+        </h3>
         <FindTenantsButton />
       </div>
-      <div className={'first-page-bottom'}>
-        <div className={'first-page-bottom-row'}>
+      <div className="first-page__bottom">
+        <div className="first-page__bottom-row">
           <SellingPoint icon={faCreditCard} text={'No subscription'} showSlash />
           <SellingPoint icon={faCoins} text={'No running advertisement costs'} showSlash />
           <SellingPoint icon={faGift} text={'Free to successful rental'} />
         </div>
       </div>
-
-      <div className={'first-page-overlay'} style={{ opacity: props.scrollOffset/window.innerHeight }}/>
+      <div className="first-page__overlay" style={{ opacity: props.scrollOffset/window.innerHeight }}/>
     </div>
   );
 }

@@ -3,27 +3,22 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
 
-.first-page-top {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 3em;
-}
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3em;
+  }
 
-.first-page-center {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10%;
-  overflow: hidden;
-
-  h3 {
-    max-width: 390px;
-    text-align: center;
+  &__center {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+    overflow: hidden;
   }
 
   &__background {
@@ -37,26 +32,43 @@
     background-position: center bottom;
     z-index: -2;
   }
-}
 
-.first-page-bottom {
-  background: $accent-color;
-}
+  &__title {
+    // Relative position, so that balloon renders behind it
+    position: relative;
+  }
+  
+  &__subtitle {
+    max-width: 390px;
+    text-align: center;
+    // Relative position, so that balloon renders behind it
+    position: relative;
+  }
 
-.first-page-bottom-row {
-  height: 6em;
-  display: flex;
-  justify-content: space-around;
-  max-width: 1500px;
-  margin: auto;
-}
+  & .find-tenants-button {
+    // Relative position, so that balloon renders behind it
+    position: relative;
+  }
 
-.first-page-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $accent-color;
-  pointer-events: none;
+  &__bottom {
+    background: $accent-color;
+  }
+
+  &__bottom-row {
+    height: 6em;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $accent-color;
+    pointer-events: none;
+  }
 }

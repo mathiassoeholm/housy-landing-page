@@ -32,9 +32,11 @@ class Balloon extends Component {
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M-100 30 C 200 300, 700 300, 800 100 S 1400 300, 1500 100, S 1800 300, 2200 500" fill="transparent"
-                vectorEffect="non-scaling-stroke"/>
-
+          <path
+            d="M-100 30 C 200 300, 700 300, 800 100 S 1400 300, 1500 100, S 1800 300, 2200 500"
+            fill="transparent"
+            vectorEffect="non-scaling-stroke"
+          />
         </svg>
         <img className="balloon__image" src={balloon}/>
       </div>
