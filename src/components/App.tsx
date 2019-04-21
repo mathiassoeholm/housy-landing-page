@@ -7,6 +7,7 @@ interface State {
 }
 
 class App extends Component<{}, State> {
+  canScroll = true
 
   state: State = {
     scrollOffset: 0,
@@ -14,17 +15,53 @@ class App extends Component<{}, State> {
 
   componentDidMount(): void {
     window.addEventListener('scroll',  this.handleScroll)
+    window.addEventListener('wheel', this.handleWheel)
+
+
+    const body = document.querySelector('body')
+    if (body != null) {
+      body.classList.add('stop-scrolling')
+    }
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll',  this.handleScroll)
+    window.removeEventListener('wheel', this.handleWheel)
   }
 
   handleScroll = () => {
+    console.log(window.pageYOffset)
     this.setState({
       scrollOffset: window.pageYOffset
     })
   }
+
+  handleWheel = (event: WheelEvent) => {
+    if (!this.canScroll) {
+      return
+    }
+
+    this.canScroll = false
+
+    setTimeout(() => {
+      this.canScroll = true
+    }, 400)
+
+    if (event.deltaY > 0) {
+      window.scroll({
+        top: window.innerHeight - this.state.scrollOffset*0.25,
+        left: 0,
+        behavior: 'smooth'
+      })
+    } else {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
+
 
   render() {
     return (

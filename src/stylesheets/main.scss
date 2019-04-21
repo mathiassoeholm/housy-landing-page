@@ -5,7 +5,11 @@
 // Tools
 @import "tools/shadow";
 
+// Generic
+@import "generic/stop-scrolling";
+
 // Components
+@import 'components/third-page';
 @import 'components/balloon';
 @import 'components/border-animation';
 @import 'components/selling-point';
