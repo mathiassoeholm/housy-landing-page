@@ -54,16 +54,14 @@ class App extends Component<{}, State> {
 
   render() {
     return this.pages.map((page, index) => {
-      const className =
-        this.state.currentPage < index
-          ? 'page page--below'
-          : this.state.currentPage > index
-          ? 'page page--above'
-          : 'page'
+      const className = this.state.currentPage < index ? 'page page--below'
+        : this.state.currentPage > index ? 'page page--above'
+        : 'page'
 
       return (
         <div key={index} className={className}>
           {page}
+          <div className={'page__overlay'}/>
         </div>
       )
     })
