@@ -16,7 +16,7 @@ class MainBoxChild extends Component<Props> {
         const image = document.getElementById(`${this.imageId}`)
 
         if (image != null) {
-          image.classList.add('main-box-child-image--finished')
+          image.classList.add('second-page__box__child__image--finished')
         }
 
         this.didStartAnimation = true
@@ -24,16 +24,18 @@ class MainBoxChild extends Component<Props> {
     }
 
     return (
-      <div className={'main-box-child'}>
+      <div className="second-page__box__child">
         <VisibilitySensor onChange={onChangeVisibility}>
           <img
             id={this.imageId}
-            className={'main-box-child-image'}
+            className="second-page__box__child__image"
             src={this.props.image}
           />
         </VisibilitySensor>
-        <h3>Establish Criteria</h3>
-        <p>
+        <h3 className="second-page__box__child__title">
+          Establish Criteria
+        </h3>
+        <p className="second-page__box__child__description">
           Establish your requirements, the Housy
           Matching process proposes your directly
           matching tenant for your property.

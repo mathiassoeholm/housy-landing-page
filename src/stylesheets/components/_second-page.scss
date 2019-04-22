@@ -1,66 +1,74 @@
 .second-page {
   height: 100%;
   background: white;
-  @include box_shadow(5);
+  display: flex;
+  flex-direction: column;
 
-  p {
+  &__top-paragraph {
     color: $faded-color;
     text-align: center;
     max-width: 800px;
     line-height: 1.8em;
   }
+
+  &__top-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__bottom-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    padding-bottom: 3em;
+  }
 }
 
-.second-page-main-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 100%;
-  max-height: 800px;
-}
-
-.second-page-top-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.second-page-main-box {
+.second-page__box {
   height: 25em;
   width: 70em;
   border: 1px solid $more-faded-color;
   border-radius: 6px;
   position: relative;
   display: flex;
-}
 
-.main-box-child {
-  flex: 1;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2em;
+  &__child {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
 
-  h3 {
-    margin: 1em 0;
-    color: black;
+    &__title {
+      margin: 1em 0;
+      color: black;
+    }
+
+    &__description {
+      color: $faded-color;
+      text-align: center;
+      line-height: 1.6em;
+    }
+
+    &__image {
+      width: 7em;
+      transform: scale(0.03);
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &--finished {
+        transform: scale(1.0);
+      }
+    }
   }
-}
 
-.main-box-child + .main-box-child {
-  border-left: 1px solid $more-faded-color;
-}
-
-.main-box-child-image {
-  width: 7em;
-  transform: scale(0.03);
-  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  &--finished {
-    transform: scale(1.0);
+  &__child + &__child {
+    border-left: 1px solid $more-faded-color;
   }
 }
 

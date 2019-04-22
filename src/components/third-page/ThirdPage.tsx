@@ -9,6 +9,18 @@ const ThirdPage: React.FC = () => {
         </h2>
         <div className="page__separator"/>
       </div>
+      <div className="third-page__grid-column">
+        <div className="third-page__grid-row">
+          <div className="third-page__grid-cell"/>
+          <div className="third-page__grid-cell"/>
+          <div className="third-page__grid-cell"/>
+        </div>
+        <div className="third-page__grid-row">
+          <div className="third-page__grid-cell"/>
+          <div className="third-page__grid-cell"/>
+          <div className="third-page__grid-cell"/>
+        </div>
+      </div>
     </div>
   )
 }
