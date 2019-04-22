@@ -1,4 +1,12 @@
 .third-page {
   height: 100%;
-  background: red;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+
+  &__top-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
