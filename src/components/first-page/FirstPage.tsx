@@ -6,6 +6,7 @@ import {faCreditCard} from '@fortawesome/free-regular-svg-icons'
 import {faCoins, faGift} from '@fortawesome/free-solid-svg-icons'
 import FindTenantsButton from '../FindTenantsButton'
 import Balloon from './Balloon'
+import Icon from '../Icon'
 
 const FirstPage: React.FC = () => {
   return (
@@ -40,9 +41,15 @@ const FirstPage: React.FC = () => {
       </div>
       <div className="first-page__bottom">
         <div className="first-page__bottom-row">
-          <SellingPoint icon={faCreditCard} text={'No subscription'} showSlash />
-          <SellingPoint icon={faCoins} text={'No running advertisement costs'} showSlash />
-          <SellingPoint icon={faGift} text={'Free to successful rental'} />
+          <SellingPoint text={'No subscription'} >
+            <Icon icon={faCreditCard} showSlash />
+          </SellingPoint>
+          <SellingPoint text={'No running advertisement costs'} >
+            <Icon icon={faCoins} showSlash />
+          </SellingPoint>
+          <SellingPoint text={'Free to successful rental'} >
+            <Icon icon={faGift} />
+          </SellingPoint>
         </div>
       </div>
     </div>

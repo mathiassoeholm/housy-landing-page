@@ -23,13 +23,24 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 600px;
+    max-width: 1200px;
     width: 100%;
   }
 
   &__grid-cell {
-    background: red;
     flex: 1;
-    height: 15em;
+    height: 16em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: $faded-color;
+
+
+    &__title {
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
   }
 }

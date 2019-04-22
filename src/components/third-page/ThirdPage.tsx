@@ -1,4 +1,5 @@
 import React from 'react'
+import GridCell from './GridCell'
 
 const ThirdPage: React.FC = () => {
   return (
@@ -11,14 +12,14 @@ const ThirdPage: React.FC = () => {
       </div>
       <div className="third-page__grid-column">
         <div className="third-page__grid-row">
-          <div className="third-page__grid-cell"/>
-          <div className="third-page__grid-cell"/>
-          <div className="third-page__grid-cell"/>
+          <GridCell />
+          <GridCell />
+          <GridCell />
         </div>
         <div className="third-page__grid-row">
-          <div className="third-page__grid-cell"/>
-          <div className="third-page__grid-cell"/>
-          <div className="third-page__grid-cell"/>
+          <GridCell />
+          <GridCell />
+          <GridCell />
         </div>
       </div>
     </div>

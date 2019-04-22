@@ -1,10 +1,12 @@
+$page-transition: 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+
 .page {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.6s ease-in-out;
+  transition: $page-transition;
   @include box_shadow(5);
 
   &--above {
@@ -36,7 +38,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.6s ease-in-out;
+  transition: $page-transition;
   background: $accent-color;
   opacity: 0;
   pointer-events: none;
