@@ -1,4 +1,4 @@
-$hover-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+$hover-transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
 .third-page {
   height: 100%;
@@ -32,8 +32,9 @@ $hover-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   &__grid-cell {
     position: relative;
     flex: 1;
-    height: 14em;
-    padding: 1em;
+    height: 15em;
+    padding: 2em;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +46,7 @@ $hover-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     &__icon {
       position: relative;
       font-size: 4em;
+      margin-bottom: 1em;
 
       // Use !important because material UI overrides the size
       height: 2.2em !important;
@@ -54,15 +56,36 @@ $hover-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     &__title {
       position: relative;
       font-weight: 400;
-      font-size: 1.1rem;
-      margin-bottom: 2em;
+      font-size: 1.15rem;
+      margin-top: 1em;
+      margin-bottom: 0;
+      transition: font-size $hover-transition, transform $hover-transition;
+    }
+
+    &:hover &__title {
+      transform: translateY(-1.3em);
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    &__description {
+      position: relative;
+      text-align: center;
+      margin: 0;
+      transform: scale(0);
+      transition: transform $hover-transition;
+      font-size: 1rem;
+    }
+
+    &:hover &__description {
+      transform: scale(1);
     }
 
     &:before {
       @include absolute-fill;
       content: '';
       background: $accent-color;
-      transform: translateX(-100%);
+      transform: translateX(-101%);
       transition: $hover-transition;
     }
 

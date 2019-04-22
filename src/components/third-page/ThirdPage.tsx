@@ -5,8 +5,7 @@ import AccountBalanceWalletOutlined from '@material-ui/icons/AccountBalanceWalle
 import CheckCircleOutlined from '@material-ui/icons/CheckCircleOutlined'
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined'
 import TrendingUp from '@material-ui/icons/TrendingUp'
-import Icon from '../Icon'
-import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
+import MonetizationOnOutlined from '@material-ui/icons/MonetizationOnOutlined'
 
 const ThirdPage: React.FC = () => {
   return (
@@ -26,7 +25,7 @@ const ThirdPage: React.FC = () => {
             <AccountBalanceWalletOutlined className="third-page__grid-cell__icon" />
           </GridCell>
           <GridCell title="No Revenue Loss" >
-            <Icon icon={faCoins} showSlash size="3x" />
+            <MonetizationOnOutlined className="third-page__grid-cell__icon" />
           </GridCell>
         </div>
         <div className="third-page__grid-row">
