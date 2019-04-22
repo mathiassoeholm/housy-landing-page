@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
 import GridCell from './GridCell'
 import AccessTime from '@material-ui/icons/AccessTime'
 import AccountBalanceWalletOutlined from '@material-ui/icons/AccountBalanceWalletOutlined'
@@ -8,6 +9,14 @@ import TrendingUp from '@material-ui/icons/TrendingUp'
 import MonetizationOnOutlined from '@material-ui/icons/MonetizationOnOutlined'
 
 const ThirdPage: React.FC = () => {
+  const [hasBeenSeen, setHasBeenSeen] = useState(false)
+
+  const onChangeVisibility = (isVisible: boolean) => {
+    if (!hasBeenSeen && isVisible) {
+      setHasBeenSeen(isVisible)
+    }
+  }
+
   return (
     <div className="third-page">
       <div className="third-page__top-column">
@@ -17,25 +26,27 @@ const ThirdPage: React.FC = () => {
         <div className="page__separator"/>
       </div>
       <div className="third-page__grid-column">
+        <VisibilitySensor onChange={onChangeVisibility}>
         <div className="third-page__grid-row">
-          <GridCell title="Time Savings" >
+          <GridCell title="Time Savings" visible={hasBeenSeen} index={0} >
             <AccessTime className="third-page__grid-cell__icon" />
           </GridCell>
-          <GridCell title="Money Savings" >
+          <GridCell title="Money Savings" visible={hasBeenSeen} index={1} >
             <AccountBalanceWalletOutlined className="third-page__grid-cell__icon" />
           </GridCell>
-          <GridCell title="No Revenue Loss" >
+          <GridCell title="No Revenue Loss" visible={hasBeenSeen} index={2} >
             <MonetizationOnOutlined className="third-page__grid-cell__icon" />
           </GridCell>
         </div>
+        </VisibilitySensor>
         <div className="third-page__grid-row">
-          <GridCell title="Market Changes" >
+          <GridCell title="Market Changes" visible={hasBeenSeen} index={3} >
             <TrendingUp className="third-page__grid-cell__icon" />
           </GridCell>
-          <GridCell title="Selection Process" >
+          <GridCell title="Selection Process" visible={hasBeenSeen} index={4} >
             <ThumbUpAltOutlined className="third-page__grid-cell__icon" />
           </GridCell>
-          <GridCell title="Complete Solution" >
+          <GridCell title="Complete Solution" visible={hasBeenSeen} index={5} >
             <CheckCircleOutlined className="third-page__grid-cell__icon" />
           </GridCell>
         </div>

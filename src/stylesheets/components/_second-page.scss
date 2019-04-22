@@ -60,6 +60,7 @@
       width: 7em;
       transform: scale(0.03);
       transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-delay: 0.2s;
 
       &--finished {
         transform: scale(1.0);
