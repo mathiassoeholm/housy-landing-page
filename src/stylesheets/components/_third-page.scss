@@ -37,6 +37,13 @@
     justify-content: space-around;
     color: $faded-color;
 
+    &__icon {
+      font-size: 4em;
+
+      // Use !important because material UI overrides the size
+      height: 2.2em !important;
+      width: 2.2em !important;;
+    }
 
     &__title {
       font-weight: 400;

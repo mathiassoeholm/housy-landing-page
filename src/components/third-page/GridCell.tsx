@@ -1,13 +1,16 @@
-import React from 'react'
-import Icon from '../Icon'
-import {faCoins} from '@fortawesome/free-solid-svg-icons'
+import React, {ReactNode} from 'react'
 
-const GridCell: React.FC = () => {
+interface Props {
+  title: string,
+  children: ReactNode,
+}
+
+const GridCell: React.FC<Props> = (props: Props) => {
   return (
     <div className="third-page__grid-cell">
-      <Icon icon={faCoins} size="3x" showSlash />
+      {props.children}
       <h3 className="third-page__grid-cell__title">
-        No Revenue Loss
+        {props.title}
       </h3>
     </div>
   )
