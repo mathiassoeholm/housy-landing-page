@@ -1,16 +1,12 @@
 import React from 'react'
 import GridCell from './GridCell'
-import {faClock, faMoneyBillAlt} from '@fortawesome/free-regular-svg-icons'
-import {
-  AccessAlarm,
-  AccessTime,
-  AccountBalanceWalletOutlined,
-  CheckCircleOutlined,
-  ThumbUpAltOutlined,
-  TrendingUp
-} from '@material-ui/icons'
+import AccessTime from '@material-ui/icons/AccessTime'
+import AccountBalanceWalletOutlined from '@material-ui/icons/AccountBalanceWalletOutlined'
+import CheckCircleOutlined from '@material-ui/icons/CheckCircleOutlined'
+import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined'
+import TrendingUp from '@material-ui/icons/TrendingUp'
 import Icon from '../Icon'
-import {faCoins} from '@fortawesome/free-solid-svg-icons'
+import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 
 const ThirdPage: React.FC = () => {
   return (

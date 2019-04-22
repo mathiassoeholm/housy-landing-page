@@ -40,6 +40,7 @@
   &__subtitle {
     max-width: 390px;
     text-align: center;
+    color: $faded-color;
     // Relative position, so that balloon renders behind it
     position: relative;
   }
