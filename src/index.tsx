@@ -1,20 +1,9 @@
-
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "normalize.css"
 import './stylesheets/main.scss';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-
-// Forcing polyfill so smooth scroll has same speed in all browsers.
-// Specifically FireFox's smooth scroll is too fast.
-// @ts-ignore
-window.__forceSmoothScrollPolyfill__ = true;
-// eslint-disable-next-line import/first
-import smoothscroll from 'smoothscroll-polyfill';
-smoothscroll.polyfill();
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
